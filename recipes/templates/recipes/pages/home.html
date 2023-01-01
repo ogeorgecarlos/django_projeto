@@ -2,11 +2,11 @@
 
 <body>
     {% include 'recipes\partials\header.html' %}
+    {% include 'recipes\partials\search.html' %}
     <main>
-        <form action="">
-            <input class ="inputs" type="search">
-            <button class="bsearch"><i class="fa-solid fa-magnifying-glass"></i></button>
-        </form>
+        <div class="container">
+            {%include 'recipes\partials\recipe.html'%}
+        </div>
     </main>
 </body>
 </html>
