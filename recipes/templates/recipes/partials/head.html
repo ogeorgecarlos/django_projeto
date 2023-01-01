@@ -1,17 +1,23 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/fontawesome.min.css" integrity="sha512-giQeaPns4lQTBMRpOOHsYnGw1tGVzbAIHUyHRgn7+6FmiEgGGjaG0T2LZJmAPMzRCl+Cug0ItQ2xDZpTmEc+CQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/js/brands.min.js" integrity="sha512-rbApvPERCHI8cOpTOKfMLVJNlXSCs4QRu8UsJ0HieeHyNKkHtUIQTZq3hv0pT7X0SUsLrRGEUsMTTpzwpdeIuw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/solid.min.css" integrity="sha512-6mc0R607di/biCutMUtU9K7NtNewiGQzrvWX4bWTeqmljZdJrwYvKJtnhgR+Ryvj+NRJ8+NnnCM/biGqMe/iRA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/fontawesome.min.css"
+        integrity="sha512-giQeaPns4lQTBMRpOOHsYnGw1tGVzbAIHUyHRgn7+6FmiEgGGjaG0T2LZJmAPMzRCl+Cug0ItQ2xDZpTmEc+CQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/js/brands.min.js"
+        integrity="sha512-rbApvPERCHI8cOpTOKfMLVJNlXSCs4QRu8UsJ0HieeHyNKkHtUIQTZq3hv0pT7X0SUsLrRGEUsMTTpzwpdeIuw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/solid.min.css"
+        integrity="sha512-6mc0R607di/biCutMUtU9K7NtNewiGQzrvWX4bWTeqmljZdJrwYvKJtnhgR+Ryvj+NRJ8+NnnCM/biGqMe/iRA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
 
     <style>
-
         @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400&display=swap');
 
         :root {
@@ -51,6 +57,8 @@
             --color-gray-8: #323232;
             --color-gray-9: #191919;
 
+            --color--if--button: rgba(0, 0, 0, 0.062);
+
             --font-primary: sans-serif;
             --font-headings: 'Roboto Slab', serif;
 
@@ -58,18 +66,19 @@
             --spacing-gutter-large: 4rem;
         }
 
-        *{
-            margin:0px;
+        * {
+            margin: 0px;
             padding: 0px;
             box-sizing: border-box;
         }
 
-        body{
+        body {
             font-family: var(--font-primary);
             font-size: 16px;
+            background-color: var(--color-gray-1);
         }
 
-        header{
+        header {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -82,15 +91,86 @@
             padding: 30px;
         }
 
-        header i{
+        header i {
             font-size: 55px;
         }
 
-        header a{
+        header a {
             color: var(--color-white);
-            text-decoration: none;    
+            text-decoration: none;
         }
 
+        main {
+            max-width: 1000px;
+            margin: 20px auto;
+        }
+
+        form {
+            height: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 2px solid var(--color-primary-dark);
+            border-radius: 12px;
+            max-width: 40vw;
+            position: relative;
+            margin: auto;
+            transition: all 300ms ease-in-out;
+        }
+
+        .inputs,
+        .bsearch {
+            border: none;
+            background: none;
+            outline: none;
+            height: 100%;
+        }
+
+        .bsearch {
+            position: absolute;
+            top: 0;
+            right: 0;
+            font-size: 1em;
+            width: 5%;
+        }
+
+        .bsearch:focus {
+            background-color: var(--color--if--button);
+        }
+
+        .inputs {
+            width: 95%;
+            position: absolute;
+            font-size: 16px;
+            color: var(--color-primary-dark);
+            font-weight: bold;
+            padding: 5px;
+        }
+
+        form:focus-within {
+            border-color: var(--color-primary);
+            background-color: var(--color-white);
+        }
+
+        form:focus-within .bsearch {
+            color: var(--color-primary);
+        }
+
+        section {
+            max-width: 1000px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin: 20px auto;
+        }
+
+        .boxdiv {
+            width: 250px;
+            height: 400px;
+            background-color: #000;
+            margin: 10px;
+        }
     </style>
 
     <title>Recipes</title>
