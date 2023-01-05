@@ -1,0 +1,48 @@
+<div class="container-c">
+    <div class='pic-recipes'>
+        <a href="{% url 'recipes:recipe' recipe.id %}">
+            <img src={{recipe.cover.url}} alt="teste">
+        </a>
+    </div>
+
+    <div class="recipe-title">
+        <a href="{% url 'recipes:recipe' recipe.id %}">
+            <h3>{{recipe.title}}</h3>
+        </a>
+    </div>
+    <div class="recipe-inf">
+        <p><i class="fa-solid fa-user"></i>&nbsp {{ recipe.author.first_name }} {{ recipe.author.last_name }} </p>
+        <p><i class="fa-solid fa-calendar-days"></i>&nbsp{{recipe.created_at|date:"d/m/Y"}}</p>
+        <a href="">
+            <p><i class="fa-solid fa-mug-hot"></i>&nbsp{{recipe.category.name}}</p>
+        </a>
+    </div>
+    <div class="recipe-subtitle">
+        <p>{{recipe.description}}</p>
+    </div>
+    <div class="recipie-finally">
+        <div class="recipe-preparo">
+            <h4><i class="fa-solid fa-clock"></i>&nbspPreparo</h4>
+            <p>{{recipe.preparation_time}} {{recipe.preparation_time_unit}}</p>
+        </div>
+        <div class="recipe-portions">
+            <h4><i class="fa-solid fa-user-group"></i>&nbspPorções</h4>
+            <p>{{recipe.servings}} {{recipe.servings_unit}}</p>
+        </div>
+    </div>
+
+    {% if  is_detail_page is not True   %}
+        <footer class="footer-card">
+            <a class="ver-mais" href="{% url 'recipes:recipe' recipe.id %}">
+                <i class="fa-solid fa-eye"></i>&nbspVer mais...
+            </a>
+        </footer>
+    {% endif %}
+    
+    {% if  is_detail_page is True   %}
+        <div class="preparation_steps">
+            {{ recipe.preparation_steps | linebreaksbr}}
+        </div>
+    {% endif %}
+
+</div>

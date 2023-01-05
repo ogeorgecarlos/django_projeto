@@ -1,22 +1,11 @@
-{% include 'recipes\partials\head.html' %}
+{% extends 'recipes\partials\blockmodel.htlm' %}
 
-<body>
-    {% include 'recipes\partials\header.html' %}
-    {% include 'recipes\partials\search.html' %}
-    <main>
+{% block title %}Home | {% endblock title %}
+
+{% block content %}
         <div class="container">
-            {%include 'recipes\partials\recipe.html'%}
-            {%include 'recipes\partials\recipe.html'%}
-            {%include 'recipes\partials\recipe.html'%}
-            {%include 'recipes\partials\recipe.html'%}
-            {%include 'recipes\partials\recipe.html'%}
-            {%include 'recipes\partials\recipe.html'%}
-            {%include 'recipes\partials\recipe.html'%}
-            {%include 'recipes\partials\recipe.html'%}
-            {%include 'recipes\partials\recipe.html'%}
-            {%include 'recipes\partials\recipe.html'%}
+            {% for recipe in recipes %}
+                {%include 'recipes\partials\card-recipe.html'%}
+            {% endfor %}
         </div>
-    </main>
-    {% include 'recipes\partials\footer.html' %}
-</body>
-</html>
+{% endblock content %}
